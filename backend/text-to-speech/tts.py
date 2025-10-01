@@ -14,7 +14,7 @@ app = modal.App("chatterbox-tts-generator")
 
 image = (
     modal.Image.debian_slim(python_version="3.11")
-    .pip_install("numpy")
+    .pip_install("numpy") ## to avoid torchaudio error on import
     .pip_install_from_requirements("text-to-speech/requirements.txt")
     .apt_install("ffmpeg")
 )
